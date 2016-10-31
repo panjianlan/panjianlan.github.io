@@ -1,0 +1,89 @@
+﻿git 用户配置
+git config --list
+git config --global user.name "pan"
+git config --global user.email "163.com"
+
+#开发流程
+
+#git clone "git 仓库地址" //下载项目
+//获取主干最新代码
+git checkout master
+git pull
+
+提交代码
+#每次开发新功能，都应该建一个独立的分支  
+git checkout mster  //切换分支
+git pull //获取主干最新代码 取回远程仓库的变化，并与本地分支合并
+
+
+#新建一个开发分支myfeature
+git checkout -b myfeature
+
+#分支修改后 就可以提交commit
+git status
+git add 某一个文件
+git add .
+git commit -m "提交内容描述"
+git push origin master //提交master分支  这里 git push -u origin master -u第一次提交代码需要以后不需要
+
+
+
+#分支的开发过程中，经常要与主干保持同步
+git fetch origin 
+
+#推送至远程仓库 --force 分支历史改变了 强行推送
+git push --force orgin myfeature
+
+
+#新建一个分支，但依然停留在当前分支
+$ git branch [branch-name]
+
+新建一个分支，并切换到该分支
+$ git checkout -b [branch]
+
+切换到指定分支，并更新工作区
+$ git checkout [branch-name]
+
+切换到上一个分支
+git checkout
+
+# 取回远程仓库的变化，并与本地分支合并
+$ git pull [remote] [branch]
+
+合并指定分支到当前分支
+git merge [brach]
+
+
+#列出所有本地分支
+git branch
+
+#列出所有远程分支
+git branch -r/--remote
+
+#列出所有本地分支和远程分支
+git branch -a
+
+删除分支
+git branch -d [branch-name]
+
+
+#删除远程分支
+git push origin --delete [branch-name]
+git branch -dr [remote/branch]
+
+
+
+
+#git 删除master后重建    删除之前必须在setting里把默认分支改成其他
+git branch -D master //删除本地master分支
+git push origin :master //删除远程master分支
+//
+git push origin --delete master //删除远程master 分支  
+#新建分支
+git branch temp
+git push origin temp //推送分支到远程
+git push origin temp:temp //将temp 分支提交到远程分支上
+
+
+
+
