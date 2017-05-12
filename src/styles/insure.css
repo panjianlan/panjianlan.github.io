@@ -1,0 +1,34 @@
+.productDo {
+  margin-bottom: 10px;
+}
+.productDo .imgDo {
+  width: 100%;
+}
+.productDo .productName {
+  height: 30px;
+  line-height: 30px;
+}
+.red {
+  color: red;
+}
+.color999 {
+  color: #999;
+}
+.padding-lf-10 {
+  padding: 0px 10px;
+}
+.padding-l-10 {
+  padding-left: 10px;
+}
+.padding-r-10 {
+  padding-right: 10px;
+}
+.closeBtn {
+  background: #666;
+  color: #fff;
+  padding: 2px 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: none;
+}
