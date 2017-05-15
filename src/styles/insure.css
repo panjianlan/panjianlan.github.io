@@ -32,3 +32,10 @@
   border-radius: 5px;
   display: none;
 }
+body {
+  background: #fff !important;
+  color: #000 !important;
+}
+.appdiv .active {
+  color: red;
+}
