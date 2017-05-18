@@ -4,7 +4,19 @@ require('styles/insure.css')
 import $ from 'jquery';
 import React from 'react';
 import InsureItem from './insureItem';
+import InsureInfo from './insureInfo';
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch,
+    Link
+} from 'react-router-dom'
 
+//const About = () => (
+//    <div>
+//      <h2>关于</h2>
+//    </div>
+//)
 
 class InsureComponent extends React.Component {
   constructor(props){
@@ -13,7 +25,7 @@ class InsureComponent extends React.Component {
   }
   componentDidMount(){
     $.ajax({
-      url: "",
+      url: "https://compcs.miniedu.com.cn/insuranceXG/insure/queryProductList",
       type: "POST",
       data: {
         assuredId: '1155826'
@@ -29,17 +41,33 @@ class InsureComponent extends React.Component {
       }.bind(this)
     });
   }
+
   render() {
     var dataArr = this.state.datalist;
+
+
     var list = dataArr.map(function (v) {
       return (
-          <InsureItem
+          <li key={v.id}><Link to="/insureInfo"><InsureItem
               key={v.id}
               item={v}
-              />
+              /></Link></li>
       );
     });
-    return <div>{list}</div>;
+    return (
+        <Router>
+          <div>
+              <Route path="/index"  render={()=>{
+                return (<ul>
+                  {list}
+                </ul>)
+              }}/>
+              <Route path="/insureInfo" component={InsureInfo}/>
+
+
+          </div>
+        </Router>
+    )
   }
 }
 

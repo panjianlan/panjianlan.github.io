@@ -1,8 +1,8 @@
 /*import 'core-js/fn/object/assign';*/
 import React from 'react';
 import ReactDOM from 'react-dom';
-import InsureComponent from './components/insure/insureList';
-
+import BasicExampleRoute4 from './components/BasicExampleRoute4';
+import AuthExample4 from './components/test/AuthExample';
 
 /*
 ReactDOM.render((
@@ -10,5 +10,5 @@ ReactDOM.render((
 ),document.getElementById('app'));*/
 
 ReactDOM.render((
-    <InsureComponent />
+    <AuthExample4 />
 ),document.getElementById('app'));
