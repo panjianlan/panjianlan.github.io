@@ -25,7 +25,7 @@ class InsureComponent extends React.Component {
   }
   componentDidMount(){
     $.ajax({
-      url: "https://compcs.miniedu.com.cn/insuranceXG/insure/queryProductList",
+      url: "",
       type: "POST",
       data: {
         assuredId: '1155826'
