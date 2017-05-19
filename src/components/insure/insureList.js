@@ -12,13 +12,8 @@ import {
     Link
 } from 'react-router-dom'
 
-//const About = () => (
-//    <div>
-//      <h2>关于</h2>
-//    </div>
-//)
 
-class InsureComponent extends React.Component {
+class InsureList extends React.Component {
   constructor(props){
     super(props);
     this.state = {datalist:[]};
@@ -48,7 +43,7 @@ class InsureComponent extends React.Component {
 
     var list = dataArr.map(function (v) {
       return (
-          <li key={v.id}><Link to="/insureInfo"><InsureItem
+          <li key={v.id}><Link to={{pathname:'/insureInfo',query:v}}><InsureItem
               key={v.id}
               item={v}
               /></Link></li>
@@ -71,4 +66,4 @@ class InsureComponent extends React.Component {
   }
 }
 
-export default InsureComponent;
+export default InsureList;
