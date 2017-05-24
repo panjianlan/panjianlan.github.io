@@ -6,8 +6,6 @@ require('styles/insure.css')
 import $ from 'jquery';
 import React from 'react';
 import {
-    BrowserRouter as Router,
-    Route,
     Link,
     Redirect
 } from 'react-router-dom'
@@ -15,23 +13,18 @@ import InsureList from './insureList.js';
 
 
 const Header = () => {
-
     return(
-        <Router>
+        <div>
             <div>
-                <div>
-                    <h2><Link to="/index"><button>返回</button></Link>保险详情</h2>
-                </div>
-                <Route path="/index" component={InsureList}/>
+                <h2><Link to="/insurelist"><button>返回</button></Link>保险详情</h2>
             </div>
-        </Router>
-
+        </div>
     )
 }
 const Banner = ({photoUrl}) => {
     return(
         <div>
-            <img style={{width:'100%'}} src={photoUrl} alt=""/>
+            <img style={{width:'100%'}} src={`/${photoUrl}`} alt=""/>
         </div>
     )
 }

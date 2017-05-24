@@ -1,7 +1,7 @@
 /*import 'core-js/fn/object/assign';*/
 import React from 'react';
 import ReactDOM from 'react-dom';
-import InsureList from './components/insure/insureList';
+import App from './components/insure/app';
 
 
 /*
@@ -10,5 +10,5 @@ ReactDOM.render((
 ),document.getElementById('app'));*/
 
 ReactDOM.render((
-    <InsureList />
+    <App />
 ),document.getElementById('app'));

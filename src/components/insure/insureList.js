@@ -1,4 +1,3 @@
-
 require('styles/common.css');
 require('styles/insure.css')
 import $ from 'jquery';
@@ -43,25 +42,20 @@ class InsureList extends React.Component {
 
     var list = dataArr.map(function (v) {
       return (
-          <li key={v.id}><Link to={{pathname:'/insureInfo',query:v}}><InsureItem
-              key={v.id}
-              item={v}
-              /></Link></li>
+          <li key={v.id}>
+            <Link to={{pathname:`${this.props.match.path}/${v.id}`,query:v}}>
+               <InsureItem item={v}/>
+            </Link>
+          </li>
       );
-    });
+    }.bind(this));
+
     return (
-        <Router>
-          <div>
-              <Route path="/index"  render={()=>{
-                return (<ul>
-                  {list}
-                </ul>)
-              }}/>
-              <Route path="/insureInfo" component={InsureInfo}/>
-
-
-          </div>
-        </Router>
+        <div>
+            <ul>
+              {list}
+            </ul>
+        </div>
     )
   }
 }
