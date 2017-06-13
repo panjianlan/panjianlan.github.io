@@ -15,31 +15,12 @@ import {
 class InsureList extends React.Component {
   constructor(props){
     super(props);
-    this.state = {datalist:[]};
   }
-  componentDidMount(){
-    $.ajax({
-      url: "",
-      type: "POST",
-      data: {
-        assuredId: '1155826'
-      },
-      dataType: "json",
-      success: function (result) {
-        if (result.rows == null || (result.rows != null && result.rows.length == 0)) {
-          return;
-        }
-        this.setState({
-          datalist: result.rows
-        });
-      }.bind(this)
-    });
-  }
-
   render() {
-    var dataArr = this.state.datalist;
-
-
+      debugger
+    const { store } = this.context;
+    const state = store.getState();
+    var dataArr = state;
     var list = dataArr.map(function (v) {
       return (
           <li key={v.id}>
@@ -58,6 +39,9 @@ class InsureList extends React.Component {
         </div>
     )
   }
+}
+InsureList.contextTypes = {
+    store: React.PropTypes.object
 }
 
 export default InsureList;

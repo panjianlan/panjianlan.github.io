@@ -7,32 +7,22 @@ import $ from 'jquery';
 import React, { Component } from "react";
 import InsureInfo from './insureInfo';
 import InsureList from './insureList';
+import {URLlinkComponet} from './entry'
 import {
     BrowserRouter as Router,
     Route,
-    Switch,
     Link
 } from 'react-router-dom';
-
 
 class App extends Component{
     constructor(props){
         super(props);
     }
-
     render(){
-
         return(
             <Router>
                 <div>
-
-                    <Route exact path="/" render= {()=>{
-                        return(
-                             <ul>
-                                <li><Link to="/insurelist">insure InsureList</Link></li>
-                             </ul>
-                        )
-                    }}/>
+                    <Route exact path="/" render= {URLlinkComponet}/>
                     <Route exact path="/insurelist" component={InsureList}/>
                     <Route exact path="/insurelist/:id" component={InsureInfo}/>
                 </div>
@@ -40,7 +30,6 @@ class App extends Component{
         )
 
     }
-
 }
 
 export default App;
